@@ -1,0 +1,48 @@
+name: RegionFlag
+version: 1.0.0
+main: com.eduardo12b.regionflag.RegionFlagPlugin
+api-version: '1.21'
+folia-supported: true
+author: Eduardo12B
+description: Plugin de regiões com flags expansíveis (playsound, commands, title)
+softdepend:
+  - PlaceholderAPI
+
+commands:
+  regiao:
+    description: Gerencia regiões e flags
+    usage: /regiao <subcomando>
+    permission: regionflag.use
+    aliases:
+      - region
+      - rg
+
+permissions:
+  regionflag.use:
+    description: Permite usar comandos básicos de região
+    default: true
+  regionflag.create:
+    description: Permite criar e deletar regiões
+    default: op
+  regionflag.admin:
+    description: Acesso administrativo completo
+    default: op
+    children:
+      regionflag.create: true
+      regionflag.use: true
+      regionflag.flag.playsound: true
+      regionflag.flag.console_command: true
+      regionflag.flag.title: true
+      regionflag.flag.teleport: true
+  regionflag.flag.playsound:
+    description: Permite configurar playsound em regiões
+    default: op
+  regionflag.flag.console_command:
+    description: Permite configurar comandos de console em regiões
+    default: op
+  regionflag.flag.title:
+    description: Permite configurar titles em regiões
+    default: op
+  regionflag.flag.teleport:
+    description: Permite configurar teleport em regiões
+    default: op
